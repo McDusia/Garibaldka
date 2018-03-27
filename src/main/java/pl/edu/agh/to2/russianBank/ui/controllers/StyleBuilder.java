@@ -8,34 +8,35 @@ import javafx.scene.layout.GridPane;
 import java.util.List;
 import java.util.Map;
 
+import static pl.edu.agh.to2.russianBank.ui.controllers.StyleConstants.*;
+
 
 public class StyleBuilder {
 
-
     public void setPosition(Map<Integer, CardView> foundations, Map<Integer,
             CardView> hands,Map<Integer, CardView> wastes, Map<Integer, List<CardView>> houses) {
-        GridPane.setConstraints(hands.get(0), 0, 11);
-        GridPane.setConstraints(wastes.get(0), 1, 11);
-        GridPane.setConstraints(foundations.get(0), 12, 3);
-        GridPane.setConstraints(foundations.get(1), 12, 5);
-        GridPane.setConstraints(foundations.get(2), 12, 7);
-        GridPane.setConstraints(foundations.get(3), 12, 9);
-        GridPane.setConstraints(foundations.get(4), 14, 3);
-        GridPane.setConstraints(foundations.get(5), 14, 5);
-        GridPane.setConstraints(foundations.get(6), 14, 7);
-        GridPane.setConstraints(foundations.get(7), 14, 9);
-        GridPane.setConstraints(wastes.get(1), 25, 1);
-        GridPane.setConstraints(hands.get(1), 26, 1);
+        GridPane.setConstraints(hands.get(0), MY_HAND_COL, MY_HAND_ROW);
+        GridPane.setConstraints(wastes.get(0), MY_WASTE_COL, MY_WASTE_ROW);
+        GridPane.setConstraints(foundations.get(0), FOUNDATION_COL1, FOUNDATION_ROW1);
+        GridPane.setConstraints(foundations.get(1), FOUNDATION_COL1, FOUNDATION_ROW2);
+        GridPane.setConstraints(foundations.get(2), FOUNDATION_COL1, FOUNDATION_ROW3);
+        GridPane.setConstraints(foundations.get(3), FOUNDATION_COL1, FOUNDATION_ROW4);
+        GridPane.setConstraints(foundations.get(4), FOUNDATION_COL2, FOUNDATION_ROW1);
+        GridPane.setConstraints(foundations.get(5), FOUNDATION_COL2, FOUNDATION_ROW2);
+        GridPane.setConstraints(foundations.get(6), FOUNDATION_COL2, FOUNDATION_ROW3);
+        GridPane.setConstraints(foundations.get(7), FOUNDATION_COL2, FOUNDATION_ROW4);
+        GridPane.setConstraints(wastes.get(1), OPP_WASTE_COL, OPP_WASTE_ROW);
+        GridPane.setConstraints(hands.get(1), OPP_HAND_COL, OPP_HAND_ROW);
 
-        addImageViews(3, 3, Lists.reverse(houses.get(0)));
-        addImageViews(5, 3, Lists.reverse(houses.get(1)));
-        addImageViews(7, 3, Lists.reverse(houses.get(2)));
-        addImageViews(9, 3, Lists.reverse(houses.get(3)));
+        addImageViews(FOUNDATION_ROW1, FOUNDATION_COL1_EXPAND, Lists.reverse(houses.get(0)));
+        addImageViews(FOUNDATION_ROW2, FOUNDATION_COL1_EXPAND, Lists.reverse(houses.get(1)));
+        addImageViews(FOUNDATION_ROW3, FOUNDATION_COL1_EXPAND, Lists.reverse(houses.get(2)));
+        addImageViews(FOUNDATION_ROW4, FOUNDATION_COL1_EXPAND, Lists.reverse(houses.get(3)));
 
-        addImageViews(3, 15, houses.get(4));
-        addImageViews(5, 15, houses.get(5));
-        addImageViews(7, 15, houses.get(6));
-        addImageViews(9, 15, houses.get(7));
+        addImageViews(FOUNDATION_ROW1, FOUNDATION_COL2_EXPAND, houses.get(4));
+        addImageViews(FOUNDATION_ROW2, FOUNDATION_COL2_EXPAND, houses.get(5));
+        addImageViews(FOUNDATION_ROW3, FOUNDATION_COL2_EXPAND, houses.get(6));
+        addImageViews(FOUNDATION_ROW4, FOUNDATION_COL2_EXPAND, houses.get(7));
     }
 
     /**

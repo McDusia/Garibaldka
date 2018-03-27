@@ -13,6 +13,8 @@ import pl.edu.agh.to2.russianBank.game.ICardSet;
 import pl.edu.agh.to2.russianBank.game.command.Move;
 import pl.edu.agh.to2.russianBank.game.command.MoveCodes;
 import pl.edu.agh.to2.russianBank.game.command.MoveController;
+import static pl.edu.agh.to2.russianBank.ui.controllers.StyleConstants.*;
+
 
 /**
  * Class made to enable drag & drop operation on cards
@@ -23,8 +25,6 @@ public class CardView extends ImageView {
 
     private static final Logger LOG = LogManager.getLogger();
     private ICardSet cardSet;
-    private int miniatureHight = 100;
-    private int miniatureWidth = 65;
 
     /**
      * Constructor, sets events on drag & drop
@@ -82,8 +82,8 @@ public class CardView extends ImageView {
             Dragboard dragboard = startDragAndDrop(TransferMode.ANY);
             ClipboardContent content = new ClipboardContent();
             ImageView imageView = new ImageView(getImage());
-            imageView.setFitHeight(miniatureHight);
-            imageView.setFitWidth(miniatureWidth);
+            imageView.setFitHeight(MINIATURE_HIGHT);
+            imageView.setFitWidth(MINIATURE_WIDTH);
             content.putImage(imageView.snapshot(null, null));
             dragboard.setContent(content);
             event.consume();
