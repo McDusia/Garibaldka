@@ -56,10 +56,10 @@ public class Service {
     public void setMissaStart(boolean missaStart) {
         this.missaStart = missaStart;
         if(missaStart) { 
-            myHandIndex = 2;  
-            opponentHandIndex = 0; 
-            myWasteIndex = 3;
-            opponentWasteIndex = 1;
+            myHandIndex = CardSetPosition.HAND_2.getPosition();
+            opponentHandIndex = CardSetPosition.HAND_1.getPosition();
+            myWasteIndex = CardSetPosition.WASTE_2.getPosition();
+            opponentWasteIndex = CardSetPosition.WASTE_1.getPosition();
         }
     }
 
